@@ -100,7 +100,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
           : RefreshIndicator(
               onRefresh: () async {
                 _loadProjects();
-                return _projectsFuture;
+                await _projectsFuture;
               },
               child: FutureBuilder<List<Project>>(
                 future: _projectsFuture,

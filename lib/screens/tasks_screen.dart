@@ -42,7 +42,7 @@ class _TasksScreenState extends State<TasksScreen> {
           : RefreshIndicator(
               onRefresh: () async {
                 _loadTasks();
-                return _tasksFuture;
+                await _tasksFuture;
               },
               child: FutureBuilder<List<Task>>(
                 future: _tasksFuture,
